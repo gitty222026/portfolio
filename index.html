@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Mauralyn Malinang, Virtual Assistant. Customer support, e-commerce management and digital marketing.">
+<meta property="og:title" content="Maura Malinang Portfolio">
+<meta property="og:description" content="Virtual Assistant with 5+ years in customer support, e-commerce and digital marketing.">
+<meta property="og:image" content="https://gitty222026.github.io/portfolio/img/maura.jpg">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;-webkit-text-size-adjust:100%}</style>
+<title>Maura Malinang Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&family=Montserrat:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+/* Layout: yellow header, alternating cream and white bands, wave dividers, black closing band. One light look by choice (WTHWTD brand). */
+:root {
+  --red: #e02b20;
+  --yellow: #fdf59a;
+  --cream: #fffdeb;
+  --black: #0b0b0b;
+  --white: #ffffff;
+  --line: rgba(11, 11, 11, 0.14);
+  --font-head: Poppins, system-ui, sans-serif;
+  --font-body: Montserrat, system-ui, sans-serif;
+  --font-hand: Caveat, "Segoe Print", cursive;
+  --pill: 999px;
+  --gutter: 90px;
+  --section: 96px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+figure { margin: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body { background: var(--white); color: var(--black); font-family: var(--font-body); font-size: 17px; line-height: 1.6; margin: 0; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--yellow); }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+
+.wrap { max-width: 1500px; margin: 0 auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+@media (max-width: 999px) { :root { --gutter: 6vw; --section: 72px; } }
+@media (max-width: 480px) { :root { --gutter: 16px; --section: 56px; } }
+
+h1, h2, h3 { font-family: var(--font-head); font-weight: 600; line-height: 1.12; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(32px, 4vw, 46px); }
+h3 { font-size: clamp(21px, 2vw, 26px); }
+p { margin: 0; text-wrap: pretty; }
+.hand { font-family: var(--font-hand); font-size: 26px; line-height: 1.1; color: var(--red); }
+.mark { background: linear-gradient(transparent 52%, var(--yellow) 52%, var(--yellow) 90%, transparent 90%); padding: 0 4px; margin: 0 -2px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--pill); border: 1.5px solid var(--black); font-size: 13px; font-weight: 600; background: var(--white); white-space: nowrap; }
+.pill.solid { background: var(--black); color: var(--yellow); border-color: var(--black); }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: var(--pill); font-weight: 700; font-size: 15px; text-decoration: none; border: 2px solid var(--red); background: var(--red); color: var(--white); transition: transform .15s, background .15s, border-color .15s; }
+.btn:hover { background: var(--black); border-color: var(--black); transform: translateY(-2px); }
+.btn.ghost { background: transparent; color: var(--black); border-color: var(--black); }
+.btn.ghost:hover { background: var(--black); color: var(--white); }
+
+/* Header */
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--yellow); border-bottom: 1px solid var(--line); }
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 84px; }
+.brand { font-family: var(--font-head); font-weight: 700; font-size: 20px; text-decoration: none; letter-spacing: -.01em; }
+.brand span { color: var(--red); }
+.nav { display: flex; align-items: center; gap: 28px; }
+.nav a.link { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; background: linear-gradient(var(--black), var(--black)) left bottom / 0 2px no-repeat; padding-bottom: 3px; transition: background-size .2s; }
+.nav a.link:hover { background-size: 100% 2px; }
+.nav .btn { padding: 10px 22px; font-size: 14px; }
+@media (max-width: 860px) { .nav a.link { display: none; } .site-head .wrap { height: 68px; } }
+
+/* Sections */
+section { padding-block: var(--section); }
+.cream { background: var(--cream); }
+.yellow-band { background: var(--yellow); }
+.sec-head { display: grid; gap: 14px; max-width: 720px; margin-bottom: 48px; }
+.eyebrow { display: inline-flex; width: fit-content; }
+.wave { display: block; width: 100%; height: 48px; }
+
+/* Hero */
+.hero { background: var(--yellow); padding-block: 72px 0; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: end; }
+.hero h1 { font-size: clamp(48px, 7vw, 92px); letter-spacing: -.02em; }
+.hero h1 .r { color: var(--red); }
+.hero .lede { font-size: 19px; max-width: 34em; margin-top: 24px; }
+.hero .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; padding-bottom: 72px; }
+.arch-wrap { position: relative; justify-self: center; width: min(400px, 100%); }
+.arch { aspect-ratio: 4 / 5; border-radius: 999px 999px 0 0; overflow: hidden; background: var(--cream); border: 6px solid var(--white); border-bottom: 0; }
+.arch img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.chip { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); background: var(--white); border-radius: var(--pill); padding: 8px 18px; font-weight: 700; font-size: 14px; box-shadow: 0 6px 18px rgba(11,11,11,.12); white-space: nowrap; }
+.chip b { color: var(--red); }
+.note-arrow { position: absolute; left: -96px; top: 26%; display: grid; justify-items: end; gap: 2px; transform: rotate(-6deg); }
+.note-arrow svg { width: 70px; height: 40px; }
+.sig { font-family: var(--font-hand); font-size: 30px; margin-top: 14px; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero .ctas { padding-bottom: 8px; } .note-arrow { display: none; } .arch-wrap { width: min(320px, 90%); } }
+
+/* About strip */
+.about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.about-grid article { display: grid; gap: 10px; align-content: start; }
+.about-grid .num { font-family: var(--font-head); font-weight: 700; font-size: 56px; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--black); }
+.about-grid article:last-child .num { color: var(--red); -webkit-text-stroke: 0; }
+@media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
+
+/* Services */
+.svc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
+.svc-card { background: var(--white); border-radius: 22px; padding: 32px 28px; box-shadow: 0 10px 30px rgba(11,11,11,.07); display: grid; gap: 18px; transition: transform .15s; }
+.svc-card:nth-child(1) { transform: rotate(-1.2deg); }
+.svc-card:nth-child(3) { transform: rotate(1.2deg); }
+.svc-card:hover { transform: translateY(-2px) rotate(0); }
+.svc-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: 15.5px; }
+.svc-card li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; }
+.svc-card li::before { content: ""; width: 20px; height: 20px; margin-top: 3px; border-radius: 50%; background: var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5' fill='none' stroke='%23e02b20' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 20px no-repeat; }
+@media (max-width: 960px) { .svc { grid-template-columns: 1fr; } .svc-card:nth-child(n) { transform: none; } }
+
+/* Work */
+.tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+.tab { font: inherit; font-weight: 700; font-size: 14px; padding: 10px 22px; border-radius: var(--pill); border: 2px solid var(--black); background: var(--white); color: var(--black); cursor: pointer; }
+.tab[aria-selected="true"] { background: var(--black); color: var(--yellow); }
+.gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 28px; }
+.shot { grid-column: span 4; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.shot.wide { grid-column: span 6; }
+.shot.full { grid-column: span 8; }
+.shot button { all: unset; cursor: zoom-in; display: block; border-radius: 16px; overflow: hidden; background: var(--white); border: 1px solid var(--line); box-shadow: 0 8px 24px rgba(11,11,11,.06); transition: transform .15s; }
+.shot button:hover { transform: translateY(-2px); }
+.shot button:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+.shot img { width: 100%; height: 260px; object-fit: cover; object-position: top left; }
+.shot.tall img { height: 420px; }
+.shot figcaption { font-size: 15px; font-weight: 500; }
+.panel-tools { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.panel-tools .hand { margin-right: 6px; }
+@media (max-width: 960px) { .shot, .shot.wide, .shot.full { grid-column: span 6; } }
+@media (max-width: 620px) { .gallery { grid-template-columns: 1fr; gap: 24px; } .shot, .shot.wide, .shot.full { grid-column: auto; } .shot img { height: 220px; } .shot.tall img { height: 340px; } }
+
+/* Setup */
+.setup { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.polaroids { position: relative; min-height: 460px; }
+.polaroid { position: absolute; background: var(--white); padding: 12px 12px 44px; box-shadow: 0 12px 30px rgba(11,11,11,.14); width: 62%; }
+.polaroid img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+.polaroid .cap { position: absolute; left: 14px; bottom: 8px; font-family: var(--font-hand); font-size: 24px; }
+.polaroid::before { content: ""; position: absolute; top: -12px; left: 50%; width: 90px; height: 26px; transform: translateX(-50%) rotate(-3deg); background: rgba(253, 245, 154, .85); }
+.polaroid.p1 { left: 0; top: 0; transform: rotate(-4deg); }
+.polaroid.p2 { right: 0; bottom: 0; transform: rotate(3deg); width: 48%; }
+.polaroid.p2 img { aspect-ratio: 3 / 4; }
+.specs { display: grid; gap: 22px; }
+.spec { display: grid; grid-template-columns: 1fr auto; gap: 4px 18px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.spec dt { font-weight: 700; }
+.spec dd { margin: 0; grid-column: 1 / -1; font-size: 15.5px; }
+.speed { font-family: var(--font-head); font-weight: 700; font-size: 15px; color: var(--red); white-space: nowrap; font-variant-numeric: tabular-nums; }
+@media (max-width: 900px) { .setup { grid-template-columns: 1fr; } .polaroids { min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; } .polaroid { position: relative; width: auto; } .polaroid.p1, .polaroid.p2 { inset: auto; } .polaroid { padding: 8px 8px 36px; } .polaroid.p2 img { aspect-ratio: 4 / 3; } .polaroid .cap { font-size: 20px; } }
+
+/* Brands */
+.brands { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
+.brand-row { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: center; padding: 22px 20px 22px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.brand-row .logo { width: 96px; height: 64px; background: var(--white); border-radius: 12px; display: grid; place-items: center; padding: 8px; border: 1px solid var(--line); }
+.brand-row .logo img { max-height: 48px; object-fit: contain; }
+.brand-row h3 { font-size: 17px; }
+.brand-row p { font-size: 14.5px; }
+@media (max-width: 1100px) { .brands { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .brands { grid-template-columns: 1fr; } }
+
+/* Teams */
+.teams { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
+.teams .shot { grid-column: auto; }
+.teams .shot img { height: auto; object-fit: contain; }
+@media (max-width: 900px) { .teams { grid-template-columns: 1fr; } }
+
+/* Contact */
+.contact { background: var(--black); color: var(--white); }
+.contact-grid { display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: center; }
+.contact .photo { width: 240px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 6px solid var(--yellow); }
+.contact .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; }
+.contact h2 { font-size: clamp(40px, 6vw, 72px); color: var(--white); }
+.contact h2 span { color: var(--yellow); }
+.contact p { font-size: 19px; max-width: 32em; margin-top: 18px; }
+.contact .hand { color: var(--yellow); margin-top: 14px; font-size: 30px; }
+.contact .card { margin-top: 28px; display: inline-grid; gap: 6px; border: 2px solid var(--yellow); border-radius: 20px; padding: 18px 24px; }
+.contact .card b { color: var(--yellow); font-family: var(--font-head); }
+@media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } .contact .photo { width: 180px; } }
+.foot { background: var(--black); color: var(--white); border-top: 1px solid rgba(255,255,255,.14); }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 24px; font-size: 14px; }
+.foot a { text-decoration: none; }
+.foot a:hover { color: var(--yellow); }
+
+/* Lightbox */
+dialog.lb { border: 0; padding: 0; background: transparent; max-width: min(1200px, 94vw); max-height: 92vh; }
+dialog.lb::backdrop { background: rgba(11,11,11,.82); }
+dialog.lb img { max-height: 82vh; width: auto; margin: 0 auto; border-radius: 12px; background: var(--white); }
+dialog.lb p { color: var(--white); text-align: center; margin-top: 12px; font-weight: 600; }
+dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--yellow); color: var(--black); font-size: 22px; font-weight: 700; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top">Maura Malinang<span>.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a class="link" href="#services">Services</a>
+      <a class="link" href="#work">Work</a>
+      <a class="link" href="#setup">Setup</a>
+      <a class="link" href="#brands">Brands</a>
+      <a class="btn" href="#contact">Hire me</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill solid">Virtual Assistant · Portfolio 2026</span>
+        <h1 style="margin-top:22px">Hi! I'm <span class="mark">Maura</span><span class="r">.</span></h1>
+        <p class="lede">I'm an experienced Virtual Assistant with over 5 years of experience across e‑commerce operations, customer support and digital marketing. My goal is to help businesses run better and grow faster without overwhelm.</p>
+        <div class="pills">
+          <span class="pill">Shopify</span><span class="pill">WooCommerce</span><span class="pill">Amazon and eBay</span><span class="pill">Helpdesk platforms</span><span class="pill">Social media</span>
+        </div>
+        <div class="ctas">
+          <a class="btn" href="#contact">Let's work together</a>
+          <a class="btn ghost" href="#work">See my work</a>
+        </div>
+      </div>
+      <div class="arch-wrap">
+        <div class="note-arrow" aria-hidden="true">
+          <span class="hand">that's me!</span>
+          <svg viewBox="0 0 70 40"><path d="M4 8 C 24 4, 44 14, 60 30" fill="none" stroke="#e02b20" stroke-width="2.5" stroke-linecap="round"/><path d="M50 30 L 61 31 L 59 20" fill="none" stroke="#e02b20" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="arch"><img src="img/maura.jpg" alt="Portrait of Mauralyn Malinang smiling"></div>
+        <div class="chip">Mauralyn Malinang · <b>5+ years</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="about-grid">
+        <article>
+          <div class="num">01</div>
+          <h3>Online stores</h3>
+          <p>I've managed online stores on Shopify, WooCommerce and Amazon/eBay, handling product listings, orders and inventory.</p>
+        </article>
+        <article>
+          <div class="num">02</div>
+          <h3>Customers</h3>
+          <p>I handle customer inquiries across email, chat, phone and helpdesk platforms.</p>
+        </article>
+        <article>
+          <div class="num">03</div>
+          <h3>Visibility</h3>
+          <p>I help brands stay visible and connected through social media management, email campaigns and SEO driven content.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <svg class="wave cream-fill" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48 V24 C 240 0, 480 0, 720 24 S 1200 48, 1440 24 V48 Z" fill="#fffdeb"/></svg>
+  <section class="cream" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill eyebrow">Services</span>
+        <h2>What I can take <span class="mark">off your plate</span></h2>
+      </div>
+      <div class="svc">
+        <div class="svc-card">
+          <h3>Customer Support</h3>
+          <ul>
+            <li>Email support and ticket management</li>
+            <li>Live chat and phone support</li>
+            <li>Social media inbox management</li>
+            <li>Handling returns, refunds and exchanges</li>
+            <li>Helpdesk administration (Zendesk, Freshdesk, Intercom, Herodesk and more)</li>
+            <li>FAQ, SOP and knowledge base creation</li>
+          </ul>
+        </div>
+        <div class="svc-card">
+          <h3>E‑commerce Management</h3>
+          <ul>
+            <li>Product listing</li>
+            <li>Inventory tracking</li>
+            <li>Order processing and fulfillment</li>
+            <li>Shipping coordination and delivery tracking</li>
+            <li>Marketplace management (Shopify, WooCommerce, Amazon/eBay)</li>
+            <li>Pricing updates and competitor research</li>
+          </ul>
+        </div>
+        <div class="svc-card">
+          <h3>Digital Marketing</h3>
+          <ul>
+            <li>Social media management and content scheduling</li>
+            <li>Content creation (graphics, captions, posts)</li>
+            <li>Email marketing campaigns (Mailchimp, Klaviyo)</li>
+            <li>Newsletter creation, blog writing, content planning and list management</li>
+            <li>Community engagement and audience growth</li>
+            <li>Keyword research and on‑page SEO</li>
+            <li>Basic analytics and reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill eyebrow">Work samples</span>
+        <h2>Real work from <span class="mark">real clients</span></h2>
+        <p>Tap any screenshot to see it bigger.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Work categories">
+        <button class="tab" role="tab" id="tab-support" aria-controls="panel-support" aria-selected="true">Customer Support</button>
+        <button class="tab" role="tab" id="tab-ecom" aria-controls="panel-ecom" aria-selected="false">E‑commerce</button>
+        <button class="tab" role="tab" id="tab-marketing" aria-controls="panel-marketing" aria-selected="false">Digital Marketing</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-support" aria-labelledby="tab-support">
+        <div class="gallery">
+          <figure class="shot wide"><button><img src="img/support-analytics.jpg" alt="Email support conversation analytics dashboard"></button><figcaption>Analytics for email support conversations.</figcaption></figure>
+          <figure class="shot wide"><button><img src="img/shopify-chat.jpg" alt="Shopify live chat inbox"></button><figcaption>Shopify live chat.</figcaption></figure>
+          <figure class="shot"><button><img src="img/herodesk-tickets.jpg" alt="Herodesk email support ticket view"></button><figcaption>Herodesk email support tickets.</figcaption></figure>
+          <figure class="shot"><button><img src="img/trustpilot-1.jpg" alt="5 star Trustpilot review praising the support team"></button><figcaption>Trustpilot reviews.</figcaption></figure>
+          <figure class="shot"><button><img src="img/trustpilot-2.jpg" alt="5 star Danish Trustpilot review naming Maura"></button><figcaption>A 5 star review that mentions me by name.</figcaption></figure>
+          <figure class="shot wide"><button><img src="img/support-tracker.jpg" alt="Customer support tracking spreadsheet"></button><figcaption>Tracking customer support returns, refunds, escalations and more.</figcaption></figure>
+          <figure class="shot wide"><button><img src="img/herodesk-macros.jpg" alt="Herodesk quick reply macro list"></button><figcaption>Macro templates on Herodesk.</figcaption></figure>
+          <figure class="shot full tall"><button><img src="img/sop-doc.jpg" alt="SOP document with step by step screenshots"></button><figcaption>SOP creation and updates.</figcaption></figure>
+        </div>
+        <div class="panel-tools"><span class="hand">tools I use</span><span class="pill">Intercom</span><span class="pill">Freshdesk</span><span class="pill">Zendesk</span><span class="pill">Herodesk</span><span class="pill">HelpScout</span><span class="pill">Gorgias</span><span class="pill">Tidio</span><span class="pill">Krisp</span><span class="pill">Shopify</span><span class="pill">Keap</span><span class="pill">GoHighLevel</span><span class="pill">Recharge</span></div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-ecom" aria-labelledby="tab-ecom" hidden>
+        <div class="gallery">
+          <figure class="shot tall"><button><img src="img/shopify-analytics.jpg" alt="Shopify analytics dashboard with sales charts"></button><figcaption>A sales report showing revenue growth from Shopify Analytics.</figcaption></figure>
+          <figure class="shot tall"><button><img src="img/product-listing.jpg" alt="Shopify product listing editor"></button><figcaption>A product listing with optimized title, description and images on Shopify.</figcaption></figure>
+          <figure class="shot tall"><button><img src="img/supplier-herodesk.jpg" alt="Supplier email thread in Herodesk"></button><figcaption>Supplier coordination on Herodesk.</figcaption></figure>
+          <figure class="shot wide"><button><img src="img/inventory.jpg" alt="Shopify inventory list with stock levels"></button><figcaption>Inventory tracking showing stock levels on Shopify.</figcaption></figure>
+          <figure class="shot wide"><button><img src="img/discord-shipping.jpg" alt="Discord thread about a shipping label"></button><figcaption>Shipping coordination on Discord.</figcaption></figure>
+          <figure class="shot full tall"><button><img src="img/underperformance-report.jpg" alt="Written report summarizing estimate underperformance"></button><figcaption>Sample of reporting the summary for estimate underperformance.</figcaption></figure>
+        </div>
+        <div class="panel-tools"><span class="hand">tools I use</span><span class="pill">Shopify</span><span class="pill">Amazon Seller Central</span><span class="pill">Recharge</span><span class="pill">Google Workspace</span><span class="pill">Asana</span><span class="pill">Trello</span><span class="pill">Notion</span><span class="pill">HighLevel</span><span class="pill">Claude</span><span class="pill">ChatGPT</span></div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-marketing" aria-labelledby="tab-marketing" hidden>
+        <div class="gallery">
+          <figure class="shot wide"><button><img src="img/content-calendar.jpg" alt="Content calendar in Google Sheets"></button><figcaption>Content creation and calendar planning using Google Sheets.</figcaption></figure>
+          <figure class="shot wide tall"><button><img src="img/instagram-grid.jpg" alt="Grid of Instagram graphics"></button><figcaption>Grid graphics I created, planned and scheduled for Instagram on Canva.</figcaption></figure>
+          <figure class="shot wide"><button><img src="img/email-campaigns.jpg" alt="List of email campaigns in ActiveCampaign"></button><figcaption>Email marketing (broadcasts and newsletters) on ActiveCampaign.</figcaption></figure>
+          <figure class="shot wide tall"><button><img src="img/seo-google.jpg" alt="Google search results with a client blog post highlighted"></button><figcaption>An optimized keyword ranking a WordPress blog on Google.</figcaption></figure>
+          <figure class="shot wide"><button><img src="img/social-report.jpg" alt="Meta Business Suite performance insights"></button><figcaption>Monthly social media performance report for a client.</figcaption></figure>
+          <figure class="shot wide"><button><img src="img/community.jpg" alt="Social media inbox with comment replies and DMs"></button><figcaption>Community management where replies and DMs show engagement.</figcaption></figure>
+        </div>
+        <div class="panel-tools"><span class="hand">tools I use</span><span class="pill">Canva</span><span class="pill">Meta</span><span class="pill">Ubersuggest</span><span class="pill">Google Search Console</span><span class="pill">ChatGPT</span><span class="pill">Claude</span><span class="pill">Instagram</span><span class="pill">TikTok</span><span class="pill">Facebook</span><span class="pill">Pinterest</span><span class="pill">LinkedIn</span><span class="pill">X</span></div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48 V24 C 240 0, 480 0, 720 24 S 1200 48, 1440 24 V48 Z" fill="#fdf59a"/></svg>
+  <section class="yellow-band" id="setup">
+    <div class="wrap setup">
+      <div class="polaroids">
+        <div class="polaroid p1"><img src="img/workspace.jpg" alt="Desk with dual monitors and a MacBook Pro"><span class="cap">my daily desk</span></div>
+        <div class="polaroid p2"><img src="img/ups.jpg" alt="UPS battery backup unit"><span class="cap">backup power</span></div>
+      </div>
+      <div class="specs">
+        <div class="sec-head" style="margin-bottom:8px">
+          <span class="pill eyebrow">Home setup proof</span>
+          <h2>Ready to work, <span class="mark" style="background:linear-gradient(transparent 52%, #ffffff 52%, #ffffff 90%, transparent 90%)">rain or shine</span></h2>
+        </div>
+        <dl class="spec"><dt>Work setup</dt><dd>Dual monitor with the MacBook Pro as the main working laptop.</dd></dl>
+        <dl class="spec"><dt>UPS battery backup</dt><span class="speed">10400mAh</span><dd>Input 100 to 240VAC / 12.6 to 14VDC, 12V battery output. Lasts up to 21 hours.</dd></dl>
+        <dl class="spec"><dt>Main internet · PLDT Home Fiber</dt><span class="speed">268 / 153 Mbps</span><dd><button class="btn ghost" style="padding:6px 14px;font-size:13px;margin-top:6px" data-zoom="img/speed-pldt.jpg" data-cap="PLDT Home Fiber speed test">See speed test</button></dd></dl>
+        <dl class="spec"><dt>Backup internet · Smart Data Plan</dt><span class="speed">303 / 154 Mbps</span><dd><button class="btn ghost" style="padding:6px 14px;font-size:13px;margin-top:6px" data-zoom="img/speed-smart.jpg" data-cap="Smart Data Plan speed test">See speed test</button></dd></dl>
+      </div>
+    </div>
+  </section>
+  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleY(-1);background:var(--white)"><path d="M0 48 V24 C 240 0, 480 0, 720 24 S 1200 48, 1440 24 V48 Z" fill="#fdf59a"/></svg>
+
+  <section id="brands">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill eyebrow">Brands previously handled</span>
+        <h2>Trusted by <span class="mark">9 brands</span> and counting</h2>
+      </div>
+      <div class="brands">
+        <div class="brand-row"><div class="logo"><img src="img/logo-foundr.jpg" alt="Foundr logo"></div><div><h3>Foundr</h3><p>Digital magazines, podcasts and online courses taught by successful business experts.</p></div></div>
+        <div class="brand-row"><div class="logo"><img src="img/logo-agile.jpg" alt="Agile logo"></div><div><h3>Agile</h3><p>A Canadian brand that makes modern, high end wooden cat trees and pet furniture.</p></div></div>
+        <div class="brand-row"><div class="logo"><img src="img/logo-lief.jpg" alt="Lief Therapeutics logo"></div><div><h3>Lief Therapeutics</h3><p>A medical device and digital health company that makes a wearable ECG smart patch and app program.</p></div></div>
+        <div class="brand-row"><div class="logo"><img src="img/logo-learnformula.jpg" alt="Learnformula logo"></div><div><h3>Learnformula</h3><p>An online continuing professional development (CPD) marketplace offering video courses, podcasts and ebooks.</p></div></div>
+        <div class="brand-row"><div class="logo"><img src="img/logo-dreambloom.jpg" alt="DreamBloom logo"></div><div><h3>DreamBloom</h3><p>Offers optimal support for the neck, shoulders and back, effective in reducing neck, shoulder and back pain.</p></div></div>
+        <div class="brand-row"><div class="logo"><img src="img/logo-jacoblund.jpg" alt="Jacob Lund logo"></div><div><h3>Jacob Lund Art</h3><p>Original art, canvas prints, posters and custom art walls by Jacob Lund Art.</p></div></div>
+        <div class="brand-row"><div class="logo"><img src="img/logo-printumo.jpg" alt="Printumo logo"></div><div><h3>Printumo</h3><p>A global print on demand platform built specifically for wall art, canvas prints and fine art paper prints.</p></div></div>
+        <div class="brand-row"><div class="logo"><img src="img/logo-mvp.jpg" alt="MVP Visuals logo"></div><div><h3>MVP Visuals</h3><p>A company that supplies custom branded event displays and high impact visual marketing products.</p></div></div>
+        <div class="brand-row"><div class="logo"><img src="img/logo-guidedmind.jpg" alt="GuidedMind logo"></div><div><h3>GuidedMind</h3><p>A technology platform and digital wellness provider.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cream" id="teams">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill eyebrow">Leading remote teams</span>
+        <h2>I keep remote teams <span class="mark">on track</span></h2>
+      </div>
+      <div class="teams">
+        <figure class="shot"><button><img src="img/va-attendance.jpg" alt="Monthly VA attendance tracker spreadsheet"></button><figcaption>Monthly attendance tracking for the VA team.</figcaption></figure>
+        <figure class="shot"><button><img src="img/va-coaching.jpg" alt="Video call grid of a VA coaching session"></button><figcaption>Hosting a monthly VA coaching.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="photo"><img src="img/maura.jpg" alt="Mauralyn Malinang"></div>
+      <div>
+        <h2>Let's work <span>together!</span></h2>
+        <p>Thank you for reviewing my portfolio. I am open to full time opportunities for long term growth!</p>
+        <p class="hand">Hire me and let's get started! *wink</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="wrap"><span>Mauralyn Malinang · Virtual Assistant · 2026</span><a href="#top">Back to top ↑</a></div>
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Screenshot preview">
+  <button class="x" id="lb-close" aria-label="Close preview">×</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</dialog>
+
+<script>
+(function () {
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(o => {
+      const on = o === t;
+      o.setAttribute('aria-selected', on);
+      document.getElementById(o.getAttribute('aria-controls')).hidden = !on;
+    });
+  }));
+  const lb = document.getElementById('lb'), li = document.getElementById('lb-img'), lc = document.getElementById('lb-cap');
+  function open(src, cap, alt) { li.src = src; li.alt = alt || cap; lc.textContent = cap; if (lb.showModal) lb.showModal(); }
+  document.querySelectorAll('.shot button').forEach(b => b.addEventListener('click', () => {
+    const img = b.querySelector('img'), cap = b.parentElement.querySelector('figcaption');
+    open(img.src, cap ? cap.textContent : '', img.alt);
+  }));
+  document.querySelectorAll('[data-zoom]').forEach(b => b.addEventListener('click', () => open(b.dataset.zoom, b.dataset.cap)));
+  document.getElementById('lb-close').addEventListener('click', () => lb.close());
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+})();
+</script>
+</body>
+</html>
