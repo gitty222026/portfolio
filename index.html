@@ -127,6 +127,9 @@ section { padding-block: var(--section); }
 .shot figcaption { font-size: 15px; font-weight: 500; }
 .panel-tools { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .panel-tools .hand { margin-right: 6px; }
+.pill.tool { padding: 7px 14px 7px 8px; gap: 8px; font-size: 13.5px; }
+.pill.tool img { width: 22px; height: 22px; object-fit: contain; border-radius: 5px; flex: none; }
+.pill.tool .ltr { width: 22px; height: 22px; border-radius: 50%; background: var(--yellow); display: grid; place-items: center; font-family: var(--font-head); font-weight: 700; font-size: 12px; flex: none; }
 @media (max-width: 960px) { .shot, .shot.wide, .shot.full { grid-column: span 6; } }
 @media (max-width: 620px) { .gallery { grid-template-columns: 1fr; gap: 24px; } .shot, .shot.wide, .shot.full { grid-column: auto; } .shot img { height: 220px; } .shot.tall img { height: 340px; } }
 
@@ -321,7 +324,7 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
           <figure class="shot wide"><button><img src="img/herodesk-macros.jpg" alt="Herodesk quick reply macro list"></button><figcaption>Macro templates on Herodesk.</figcaption></figure>
           <figure class="shot full tall"><button><img src="img/sop-doc.jpg" alt="SOP document with step by step screenshots"></button><figcaption>SOP creation and updates.</figcaption></figure>
         </div>
-        <div class="panel-tools"><span class="hand">tools I use</span><span class="pill">Intercom</span><span class="pill">Freshdesk</span><span class="pill">Zendesk</span><span class="pill">Herodesk</span><span class="pill">HelpScout</span><span class="pill">Gorgias</span><span class="pill">Tidio</span><span class="pill">Krisp</span><span class="pill">Shopify</span><span class="pill">Keap</span><span class="pill">GoHighLevel</span><span class="pill">Recharge</span></div>
+        <div class="panel-tools"><span class="hand">tools I use</span><span class="pill tool"><img src="img/tools/intercom.svg" alt="" width="18" height="18">Intercom</span><span class="pill tool"><img src="img/tools/freshdesk.png" alt="" width="18" height="18">Freshdesk</span><span class="pill tool"><img src="img/tools/zendesk.svg" alt="" width="18" height="18">Zendesk</span><span class="pill tool"><img src="img/tools/herodesk.png" alt="" width="18" height="18">Herodesk</span><span class="pill tool"><img src="img/tools/helpscout.svg" alt="" width="18" height="18">HelpScout</span><span class="pill tool"><img src="img/tools/gorgias.png" alt="" width="18" height="18">Gorgias</span><span class="pill tool"><img src="img/tools/tidio.png" alt="" width="18" height="18">Tidio</span><span class="pill tool"><span class="ltr" aria-hidden="true">K</span>Krisp</span><span class="pill tool"><img src="img/tools/shopify.svg" alt="" width="18" height="18">Shopify</span><span class="pill tool"><img src="img/tools/keap.png" alt="" width="18" height="18">Keap</span><span class="pill tool"><img src="img/tools/highlevel.png" alt="" width="18" height="18">GoHighLevel</span><span class="pill tool"><img src="img/tools/recharge.png" alt="" width="18" height="18">Recharge</span></div>
       </div>
 
       <div class="panel" role="tabpanel" id="panel-ecom" aria-labelledby="tab-ecom" hidden>
@@ -333,7 +336,7 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
           <figure class="shot wide"><button><img src="img/discord-shipping.jpg" alt="Discord thread about a shipping label"></button><figcaption>Shipping coordination on Discord.</figcaption></figure>
           <figure class="shot full tall"><button><img src="img/underperformance-report.jpg" alt="Written report summarizing estimate underperformance"></button><figcaption>Sample of reporting the summary for estimate underperformance.</figcaption></figure>
         </div>
-        <div class="panel-tools"><span class="hand">tools I use</span><span class="pill">Shopify</span><span class="pill">Amazon Seller Central</span><span class="pill">Recharge</span><span class="pill">Google Workspace</span><span class="pill">Asana</span><span class="pill">Trello</span><span class="pill">Notion</span><span class="pill">HighLevel</span><span class="pill">Claude</span><span class="pill">ChatGPT</span></div>
+        <div class="panel-tools"><span class="hand">tools I use</span><span class="pill tool"><img src="img/tools/shopify.svg" alt="" width="18" height="18">Shopify</span><span class="pill tool"><img src="img/tools/amazon.svg" alt="" width="18" height="18">Amazon Seller Central</span><span class="pill tool"><img src="img/tools/recharge.png" alt="" width="18" height="18">Recharge</span><span class="pill tool"><img src="img/tools/google.svg" alt="" width="18" height="18">Google Workspace</span><span class="pill tool"><img src="img/tools/asana.svg" alt="" width="18" height="18">Asana</span><span class="pill tool"><img src="img/tools/trello.svg" alt="" width="18" height="18">Trello</span><span class="pill tool"><img src="img/tools/notion.svg" alt="" width="18" height="18">Notion</span><span class="pill tool"><img src="img/tools/highlevel.png" alt="" width="18" height="18">HighLevel</span><span class="pill tool"><img src="img/tools/claude.svg" alt="" width="18" height="18">Claude</span><span class="pill tool"><img src="img/tools/openai.svg" alt="" width="18" height="18">ChatGPT</span></div>
       </div>
 
       <div class="panel" role="tabpanel" id="panel-marketing" aria-labelledby="tab-marketing" hidden>
@@ -345,7 +348,7 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
           <figure class="shot wide"><button><img src="img/social-report.jpg" alt="Meta Business Suite performance insights"></button><figcaption>Monthly social media performance report for a client.</figcaption></figure>
           <figure class="shot wide"><button><img src="img/community.jpg" alt="Social media inbox with comment replies and DMs"></button><figcaption>Community management where replies and DMs show engagement.</figcaption></figure>
         </div>
-        <div class="panel-tools"><span class="hand">tools I use</span><span class="pill">Canva</span><span class="pill">Meta</span><span class="pill">Ubersuggest</span><span class="pill">Google Search Console</span><span class="pill">ChatGPT</span><span class="pill">Claude</span><span class="pill">Instagram</span><span class="pill">TikTok</span><span class="pill">Facebook</span><span class="pill">Pinterest</span><span class="pill">LinkedIn</span><span class="pill">X</span></div>
+        <div class="panel-tools"><span class="hand">tools I use</span><span class="pill tool"><img src="img/tools/canva.svg" alt="" width="18" height="18">Canva</span><span class="pill tool"><img src="img/tools/meta.svg" alt="" width="18" height="18">Meta</span><span class="pill tool"><span class="ltr" aria-hidden="true">U</span>Ubersuggest</span><span class="pill tool"><img src="img/tools/googlesearchconsole.svg" alt="" width="18" height="18">Google Search Console</span><span class="pill tool"><img src="img/tools/openai.svg" alt="" width="18" height="18">ChatGPT</span><span class="pill tool"><img src="img/tools/claude.svg" alt="" width="18" height="18">Claude</span><span class="pill tool"><img src="img/tools/instagram.svg" alt="" width="18" height="18">Instagram</span><span class="pill tool"><img src="img/tools/tiktok.svg" alt="" width="18" height="18">TikTok</span><span class="pill tool"><img src="img/tools/facebook.svg" alt="" width="18" height="18">Facebook</span><span class="pill tool"><img src="img/tools/pinterest.svg" alt="" width="18" height="18">Pinterest</span><span class="pill tool"><img src="img/tools/linkedin.svg" alt="" width="18" height="18">LinkedIn</span><span class="pill tool"><img src="img/tools/x.svg" alt="" width="18" height="18">X</span></div>
       </div>
     </div>
   </section>
@@ -446,5 +449,6 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
   lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
 })();
 </script>
+
 </body>
 </html>
