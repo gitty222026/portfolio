@@ -126,8 +126,10 @@ section { padding-block: var(--section); }
 @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
 
 /* Services */
-.svc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
-.svc-card { background: var(--white); border-radius: 0; padding: 32px 28px; border: 1px solid var(--line); display: grid; gap: 18px; transition: transform .15s; }
+.svc { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto 1fr; column-gap: 28px; row-gap: 0; align-items: stretch; }
+.svc-card { background: var(--white); border-radius: 0; padding: 32px 28px; border: 1px solid var(--line); display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 18px; align-content: start; transition: transform .15s; }
+.svc-card h3 { align-self: end; }
+.svc-card ul { align-content: start; }
 .svc-card:hover { transform: translateY(-2px); }
 .svc-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: 15.5px; }
 .svc-card li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; }
