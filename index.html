@@ -79,15 +79,15 @@ section { padding-block: var(--section); }
 
 
 /* Cover */
-.cover { display: grid; grid-template-columns: 1.05fr .95fr; min-height: min(860px, 92vh); padding: 0; background: var(--white); border-bottom: 1px solid var(--line); }
-.cover-text { display: grid; grid-template-rows: auto 1fr auto; gap: 40px; padding-block: 40px 48px; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: 48px; }
+.cover { display: grid; grid-template-columns: 1fr; min-height: min(820px, 90vh); padding: 0; background: var(--white); border-bottom: 1px solid var(--line); }
+.cover-text { display: grid; grid-template-rows: auto 1fr auto; gap: 40px; padding-block: 40px 48px; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); max-width: 1500px; width: 100%; margin: 0 auto; }
 .cover-top { display: flex; justify-content: space-between; gap: 16px; font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; padding-bottom: 18px; border-bottom: 1px solid var(--black); }
 .cover-title { align-self: center; display: grid; gap: 18px; }
 .cover-kicker { font-family: var(--font-hand); font-style: italic; font-size: clamp(24px, 2.6vw, 34px); color: var(--muted); }
-.cover h1 { font-size: clamp(72px, 11.5vw, 168px); font-weight: 400; letter-spacing: -.055em; line-height: .86; margin-left: -.04em; }
+.cover h1 { font-size: clamp(72px, 15vw, 240px); font-weight: 400; letter-spacing: -.055em; line-height: .86; margin-left: -.04em; }
 .cover h1 .dot { color: var(--gray); }
 .cover-lede { max-width: 26em; font-size: 18px; color: var(--muted); }
-.cover-index { display: grid; grid-template-columns: repeat(3, auto); gap: 24px; margin: 0; padding-top: 20px; border-top: 1px solid var(--line); }
+.cover-index { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0; padding-top: 20px; border-top: 1px solid var(--line); }
 .cover-index dt { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .cover-index dd { margin: 4px 0 0; font-size: 17px; font-weight: 500; }
 .cover-photo { position: relative; margin: 0; background: var(--gray); overflow: hidden; min-height: 360px; }
@@ -95,7 +95,6 @@ section { padding-block: var(--section); }
 .cover-photo figcaption { position: absolute; left: 24px; bottom: 22px; background: var(--white); padding: 6px 12px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
 @media (max-width: 900px) {
   .cover { grid-template-columns: 1fr; min-height: 0; }
-  .cover-photo { order: -1; height: 300px; min-height: 0; }
   .cover-text { padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); gap: 32px; }
   .cover-index { grid-template-columns: 1fr 1fr; }
   .cover-index div:last-child { grid-column: 1 / -1; }
@@ -263,10 +262,6 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
         <div><dt>Focus</dt><dd>Support · E&#8209;commerce · Marketing</dd></div>
       </dl>
     </div>
-    <figure class="cover-photo">
-      <img src="img/cover.jpg" alt="Minimal white desk with a computer">
-      <figcaption>Selected work, 2026</figcaption>
-    </figure>
   </section>
   <section class="hero">
     <div class="wrap hero-grid">
@@ -280,7 +275,6 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
       <div class="arch-wrap">
         <div class="arch"><img src="img/maura.jpg" alt="Portrait of Mauralyn Malinang smiling"></div>
         <div class="chip">Mauralyn Malinang · <b>5+ years</b></div>
-        <p class="hand sig-name">Mauralyn Malinang</p>
       </div>
     </div>
   </section>
