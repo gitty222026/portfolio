@@ -11,7 +11,7 @@
 <title>Maura Malinang Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Beth+Ellen&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 <style>
 /* Layout: monochrome editorial like the Canva portfolio. White pages, near black ink, warm gray accents, black label tags, dark closing page. One light look by choice. */
 :root {
@@ -25,7 +25,7 @@
   --line: rgba(34, 31, 32, 0.14);
   --font-head: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
-  --font-hand: "Beth Ellen", "Segoe Script", cursive;
+  --font-hand: "Instrument Serif", Georgia, serif;
   --pill: 999px;
   --gutter: 90px;
   --section: 96px;
@@ -49,7 +49,7 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 500; letter-spacing: -.
 h2 { font-size: clamp(32px, 4vw, 46px); }
 h3 { font-size: clamp(21px, 2vw, 26px); }
 p { margin: 0; text-wrap: pretty; }
-.hand { font-family: var(--font-hand); font-size: 20px; line-height: 1.4; color: var(--black); }
+.hand { font-family: var(--font-hand); font-style: italic; font-size: 24px; line-height: 1.3; color: var(--black); }
 .mark { color: var(--muted); }
 .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--pill); border: 1.5px solid var(--black); font-size: 13px; font-weight: 600; background: var(--white); white-space: nowrap; }
 .pill.solid, .eyebrow.pill { background: var(--black); color: var(--white); border-color: var(--black); border-radius: 0; text-transform: uppercase; letter-spacing: .06em; font-weight: 500; padding: 4px 10px; }
@@ -79,12 +79,27 @@ section { padding-block: var(--section); }
 
 
 /* Cover */
-.cover { position: relative; padding: 0; background: var(--cream); }
-.cover > img { width: 100%; height: clamp(360px, 62vw, 760px); object-fit: cover; }
-.cover-card { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: 10px; }
-.cover-card h1 { background: var(--white); padding: .12em .5em .18em; font-size: clamp(56px, 11vw, 150px); font-weight: 400; letter-spacing: -.03em; box-shadow: 0 10px 30px rgba(34,31,32,.08); }
-.cover-name { margin-top: 18px; font-size: clamp(16px, 2vw, 24px); letter-spacing: .08em; font-weight: 500; }
-.cover-role { font-size: clamp(12px, 1.3vw, 15px); letter-spacing: .14em; }
+.cover { display: grid; grid-template-columns: 1.05fr .95fr; min-height: min(860px, 92vh); padding: 0; background: var(--white); border-bottom: 1px solid var(--line); }
+.cover-text { display: grid; grid-template-rows: auto 1fr auto; gap: 40px; padding-block: 40px 48px; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: 48px; }
+.cover-top { display: flex; justify-content: space-between; gap: 16px; font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; padding-bottom: 18px; border-bottom: 1px solid var(--black); }
+.cover-title { align-self: center; display: grid; gap: 18px; }
+.cover-kicker { font-family: var(--font-hand); font-style: italic; font-size: clamp(24px, 2.6vw, 34px); color: var(--muted); }
+.cover h1 { font-size: clamp(72px, 11.5vw, 168px); font-weight: 400; letter-spacing: -.055em; line-height: .86; margin-left: -.04em; }
+.cover h1 .dot { color: var(--gray); }
+.cover-lede { max-width: 26em; font-size: 18px; color: var(--muted); }
+.cover-index { display: grid; grid-template-columns: repeat(3, auto); gap: 24px; margin: 0; padding-top: 20px; border-top: 1px solid var(--line); }
+.cover-index dt { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.cover-index dd { margin: 4px 0 0; font-size: 17px; font-weight: 500; }
+.cover-photo { position: relative; margin: 0; background: var(--gray); overflow: hidden; min-height: 360px; }
+.cover-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 38% 50%; filter: grayscale(.25) contrast(1.02); }
+.cover-photo figcaption { position: absolute; left: 24px; bottom: 22px; background: var(--white); padding: 6px 12px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+@media (max-width: 900px) {
+  .cover { grid-template-columns: 1fr; min-height: 0; }
+  .cover-photo { order: -1; height: 300px; min-height: 0; }
+  .cover-text { padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); gap: 32px; }
+  .cover-index { grid-template-columns: 1fr 1fr; }
+  .cover-index div:last-child { grid-column: 1 / -1; }
+}
 
 /* Hero */
 .hero { background: var(--white); padding-block: 72px 0; overflow: hidden; }
@@ -100,11 +115,9 @@ section { padding-block: var(--section); }
 .arch img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
 .chip { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); background: var(--white); border-radius: var(--pill); padding: 8px 18px; font-weight: 700; font-size: 14px; box-shadow: 0 6px 18px rgba(11,11,11,.12); white-space: nowrap; }
 .chip b { color: var(--muted); }
-.note-arrow { position: absolute; left: -96px; top: 26%; display: grid; justify-items: end; gap: 2px; transform: rotate(-6deg); }
-.note-arrow svg { width: 70px; height: 40px; }
 .sig-name { text-align: center; margin-top: 14px; font-size: 22px; }
 .sig { font-family: var(--font-hand); font-size: 30px; margin-top: 14px; }
-@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero .ctas { padding-bottom: 8px; } .note-arrow { display: none; } .arch-wrap { width: min(320px, 90%); } }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero .ctas { padding-bottom: 8px; } .arch-wrap { width: min(320px, 90%); } }
 
 /* About strip */
 .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -146,7 +159,7 @@ section { padding-block: var(--section); }
 .polaroids { position: relative; min-height: 460px; }
 .polaroid { position: absolute; background: var(--white); padding: 12px 12px 44px; box-shadow: 0 12px 30px rgba(11,11,11,.14); width: 62%; }
 .polaroid img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
-.polaroid .cap { position: absolute; left: 14px; bottom: 8px; font-family: var(--font-hand); font-size: 24px; }
+.polaroid .cap { position: absolute; left: 14px; bottom: 8px; font-family: var(--font-hand); font-style: italic; font-size: 24px; }
 .polaroid::before { content: ""; position: absolute; top: -12px; left: 50%; width: 90px; height: 26px; transform: translateX(-50%) rotate(-3deg); background: rgba(220, 216, 212, .8); }
 .polaroid.p1 { left: 0; top: 0; transform: rotate(-4deg); }
 .polaroid.p2 { right: 0; bottom: 0; transform: rotate(3deg); width: 48%; }
@@ -184,7 +197,7 @@ section { padding-block: var(--section); }
 .contact h2 { font-size: clamp(40px, 6vw, 72px); color: var(--white); }
 .contact h2 span { color: var(--white); }
 .contact p { font-size: 19px; max-width: 32em; margin-top: 18px; }
-.contact .hand { color: var(--white); margin-top: 18px; font-size: 22px; }
+.contact .hand { color: var(--white); margin-top: 18px; font-size: 30px; }
 .contact .card { margin-top: 28px; display: inline-grid; gap: 6px; border: 2px solid var(--yellow); border-radius: 20px; padding: 18px 24px; }
 .contact .card b { color: var(--yellow); font-family: var(--font-head); }
 @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } .contact .photo { width: 180px; } }
@@ -201,7 +214,8 @@ section { padding-block: var(--section); }
   body::before { display: none; }
   section { break-before: page; }
   .cover { break-before: auto; }
-  .cover > img { height: 1555px; }
+  .cover { height: 100vh; min-height: 0; border-bottom: 0; }
+  .cover-text { padding-block: 64px 72px; }
   .cover + .hero { break-before: page; }
   .about-grid { margin-top: 0; }
   figure, .brand-row, .svc-card, .spec, .sec-head, .panel-tools, .polaroid { break-inside: avoid; }
@@ -236,12 +250,23 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
 
 <main id="top">
   <section class="cover">
-    <img src="img/cover.jpg" alt="Clean white desk with a computer">
-    <div class="cover-card">
-      <h1>Portfolio</h1>
-      <p class="cover-name">MAURALYN MALINANG</p>
-      <p class="cover-role">VIRTUAL ASSISTANT · 2026</p>
+    <div class="cover-text">
+      <div class="cover-top"><span>Mauralyn Malinang</span><span>Vol. 2026</span></div>
+      <div class="cover-title">
+        <p class="cover-kicker">Virtual Assistant</p>
+        <h1>Port<wbr>folio<span class="dot">.</span></h1>
+        <p class="cover-lede">Customer support, e&#8209;commerce operations and digital marketing for growing online brands.</p>
+      </div>
+      <dl class="cover-index">
+        <div><dt>Experience</dt><dd>5+ years</dd></div>
+        <div><dt>Brands handled</dt><dd>10</dd></div>
+        <div><dt>Focus</dt><dd>Support · E&#8209;commerce · Marketing</dd></div>
+      </dl>
     </div>
+    <figure class="cover-photo">
+      <img src="img/cover.jpg" alt="Minimal white desk with a computer">
+      <figcaption>Selected work, 2026</figcaption>
+    </figure>
   </section>
   <section class="hero">
     <div class="wrap hero-grid">
@@ -253,10 +278,6 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
         </div>
       </div>
       <div class="arch-wrap">
-        <div class="note-arrow" aria-hidden="true">
-          <span class="hand">that's me!</span>
-          <svg viewBox="0 0 70 40"><path d="M4 8 C 24 4, 44 14, 60 30" fill="none" stroke="#221f20" stroke-width="2.5" stroke-linecap="round"/><path d="M50 30 L 61 31 L 59 20" fill="none" stroke="#221f20" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
         <div class="arch"><img src="img/maura.jpg" alt="Portrait of Mauralyn Malinang smiling"></div>
         <div class="chip">Mauralyn Malinang · <b>5+ years</b></div>
         <p class="hand sig-name">Mauralyn Malinang</p>
