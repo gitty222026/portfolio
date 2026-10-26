@@ -31,7 +31,7 @@
 }
 * { box-sizing: border-box; }
 figure { margin: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 body { background: var(--white); color: var(--black); font-family: var(--font-body); font-size: 17px; line-height: 1.6; margin: 0; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--yellow); }
@@ -81,7 +81,8 @@ section { padding-block: var(--section); }
 .hero h1 { font-size: clamp(48px, 7vw, 92px); letter-spacing: -.02em; }
 .hero h1 .r { color: var(--red); }
 .hero .lede { font-size: 19px; max-width: 34em; margin-top: 24px; }
-.hero .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.hero .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; padding-bottom: 72px; }
+@media (max-width: 900px) { .hero .pills { padding-bottom: 8px; } }
 .hero .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; padding-bottom: 72px; }
 .arch-wrap { position: relative; justify-self: center; width: min(400px, 100%); }
 .arch { aspect-ratio: 4 / 5; border-radius: 999px 999px 0 0; overflow: hidden; background: var(--cream); border: 6px solid var(--white); border-bottom: 0; }
@@ -112,9 +113,6 @@ section { padding-block: var(--section); }
 @media (max-width: 960px) { .svc { grid-template-columns: 1fr; } .svc-card:nth-child(n) { transform: none; } }
 
 /* Work */
-.tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
-.tab { font: inherit; font-weight: 700; font-size: 14px; padding: 10px 22px; border-radius: var(--pill); border: 2px solid var(--black); background: var(--white); color: var(--black); cursor: pointer; }
-.tab[aria-selected="true"] { background: var(--black); color: var(--yellow); }
 .gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 28px; }
 .shot { grid-column: span 4; display: grid; gap: 12px; align-content: start; min-width: 0; }
 .shot.wide { grid-column: span 6; }
@@ -151,13 +149,15 @@ section { padding-block: var(--section); }
 @media (max-width: 900px) { .setup { grid-template-columns: 1fr; } .polaroids { min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; } .polaroid { position: relative; width: auto; } .polaroid.p1, .polaroid.p2 { inset: auto; } .polaroid { padding: 8px 8px 36px; } .polaroid.p2 img { aspect-ratio: 4 / 3; } .polaroid .cap { font-size: 20px; } }
 
 /* Brands */
-.brands { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
+.brands { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 40px; border-top: 1px solid var(--line); }
 .brand-row { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: center; padding: 22px 20px 22px 0; border-bottom: 1px solid var(--line); min-width: 0; }
 .brand-row .logo { width: 96px; height: 64px; background: var(--white); border-radius: 12px; display: grid; place-items: center; padding: 8px; border: 1px solid var(--line); }
 .brand-row .logo img { max-height: 48px; object-fit: contain; }
+.brand-row .logo.wordmark { display: flex; align-items: baseline; justify-content: center; gap: 1px; font-family: var(--font-head); color: var(--black); }
+.brand-row .logo.wordmark span:first-child { font-weight: 700; font-size: 13px; letter-spacing: .08em; }
+.brand-row .logo.wordmark span:last-child { font-weight: 300; font-size: 14px; }
 .brand-row h3 { font-size: 17px; }
 .brand-row p { font-size: 14.5px; }
-@media (max-width: 1100px) { .brands { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .brands { grid-template-columns: 1fr; } }
 
 /* Teams */
@@ -193,18 +193,6 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
 </head>
 <body>
 
-<header class="site-head">
-  <div class="wrap">
-    <a class="brand" href="#top">Maura Malinang<span>.</span></a>
-    <nav class="nav" aria-label="Main">
-      <a class="link" href="#services">Services</a>
-      <a class="link" href="#work">Work</a>
-      <a class="link" href="#setup">Setup</a>
-      <a class="link" href="#brands">Brands</a>
-      <a class="btn" href="#contact">Hire me</a>
-    </nav>
-  </div>
-</header>
 
 <main id="top">
   <section class="hero">
@@ -215,10 +203,6 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
         <p class="lede">I'm an experienced Virtual Assistant with over 5 years of experience across e‑commerce operations, customer support and digital marketing. My goal is to help businesses run better and grow faster without overwhelm.</p>
         <div class="pills">
           <span class="pill">Shopify</span><span class="pill">WooCommerce</span><span class="pill">Amazon and eBay</span><span class="pill">Helpdesk platforms</span><span class="pill">Social media</span>
-        </div>
-        <div class="ctas">
-          <a class="btn" href="#contact">Let's work together</a>
-          <a class="btn ghost" href="#work">See my work</a>
         </div>
       </div>
       <div class="arch-wrap">
@@ -254,7 +238,26 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
     </div>
   </section>
 
-  <svg class="wave cream-fill" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48 V24 C 240 0, 480 0, 720 24 S 1200 48, 1440 24 V48 Z" fill="#fffdeb"/></svg>
+  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48 V24 C 240 0, 480 0, 720 24 S 1200 48, 1440 24 V48 Z" fill="#fdf59a"/></svg>
+  <section class="yellow-band" id="setup">
+    <div class="wrap setup">
+      <div class="polaroids">
+        <div class="polaroid p1"><img src="img/workspace.jpg" alt="Desk with dual monitors and a MacBook Pro"><span class="cap">my daily desk</span></div>
+        <div class="polaroid p2"><img src="img/ups.jpg" alt="UPS battery backup unit"><span class="cap">backup power</span></div>
+      </div>
+      <div class="specs">
+        <div class="sec-head" style="margin-bottom:8px">
+          <span class="pill eyebrow">Home setup proof</span>
+          <h2>Ready to work, <span class="mark" style="background:linear-gradient(transparent 52%, #ffffff 52%, #ffffff 90%, transparent 90%)">rain or shine</span></h2>
+        </div>
+        <dl class="spec"><dt>Work setup</dt><dd>Dual monitor with the MacBook Pro as the main working laptop.</dd></dl>
+        <dl class="spec"><dt>UPS battery backup</dt><span class="speed">10400mAh</span><dd>Input 100 to 240VAC / 12.6 to 14VDC, 12V battery output. Lasts up to 21 hours.</dd></dl>
+        <dl class="spec"><dt>Main internet · PLDT Home Fiber</dt><span class="speed">268 / 153 Mbps</span><dd><button class="btn ghost" style="padding:6px 14px;font-size:13px;margin-top:6px" data-zoom="img/speed-pldt.jpg" data-cap="PLDT Home Fiber speed test">See speed test</button></dd></dl>
+        <dl class="spec"><dt>Backup internet · Smart Data Plan</dt><span class="speed">303 / 154 Mbps</span><dd><button class="btn ghost" style="padding:6px 14px;font-size:13px;margin-top:6px" data-zoom="img/speed-smart.jpg" data-cap="Smart Data Plan speed test">See speed test</button></dd></dl>
+      </div>
+    </div>
+  </section>
+  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleY(-1);background:var(--cream)"><path d="M0 48 V24 C 240 0, 480 0, 720 24 S 1200 48, 1440 24 V48 Z" fill="#fdf59a"/></svg>
   <section class="cream" id="services">
     <div class="wrap">
       <div class="sec-head">
@@ -300,21 +303,14 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
     </div>
   </section>
 
-  <section id="work">
+  <section id="work-support">
     <div class="wrap">
       <div class="sec-head">
-        <span class="pill eyebrow">Work samples</span>
-        <h2>Real work from <span class="mark">real clients</span></h2>
+        <span class="pill eyebrow solid">Customer Support</span>
+        <h2>Support that keeps <span class="mark">customers happy</span></h2>
         <p>Tap any screenshot to see it bigger.</p>
       </div>
-      <div class="tabs" role="tablist" aria-label="Work categories">
-        <button class="tab" role="tab" id="tab-support" aria-controls="panel-support" aria-selected="true">Customer Support</button>
-        <button class="tab" role="tab" id="tab-ecom" aria-controls="panel-ecom" aria-selected="false">E‑commerce</button>
-        <button class="tab" role="tab" id="tab-marketing" aria-controls="panel-marketing" aria-selected="false">Digital Marketing</button>
-      </div>
-
-      <div class="panel" role="tabpanel" id="panel-support" aria-labelledby="tab-support">
-        <div class="gallery">
+      <div class="gallery">
           <figure class="shot wide"><button><img src="img/support-analytics.jpg" alt="Email support conversation analytics dashboard"></button><figcaption>Analytics for email support conversations.</figcaption></figure>
           <figure class="shot wide"><button><img src="img/shopify-chat.jpg" alt="Shopify live chat inbox"></button><figcaption>Shopify live chat.</figcaption></figure>
           <figure class="shot"><button><img src="img/herodesk-tickets.jpg" alt="Herodesk email support ticket view"></button><figcaption>Herodesk email support tickets.</figcaption></figure>
@@ -325,10 +321,15 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
           <figure class="shot full tall"><button><img src="img/sop-doc.jpg" alt="SOP document with step by step screenshots"></button><figcaption>SOP creation and updates.</figcaption></figure>
         </div>
         <div class="panel-tools"><span class="hand">tools I use</span><span class="pill tool"><img src="img/tools/intercom.svg" alt="" width="18" height="18">Intercom</span><span class="pill tool"><img src="img/tools/freshdesk.png" alt="" width="18" height="18">Freshdesk</span><span class="pill tool"><img src="img/tools/zendesk.svg" alt="" width="18" height="18">Zendesk</span><span class="pill tool"><img src="img/tools/herodesk.png" alt="" width="18" height="18">Herodesk</span><span class="pill tool"><img src="img/tools/helpscout.svg" alt="" width="18" height="18">HelpScout</span><span class="pill tool"><img src="img/tools/gorgias.png" alt="" width="18" height="18">Gorgias</span><span class="pill tool"><img src="img/tools/tidio.png" alt="" width="18" height="18">Tidio</span><span class="pill tool"><span class="ltr" aria-hidden="true">K</span>Krisp</span><span class="pill tool"><img src="img/tools/shopify.svg" alt="" width="18" height="18">Shopify</span><span class="pill tool"><img src="img/tools/keap.png" alt="" width="18" height="18">Keap</span><span class="pill tool"><img src="img/tools/highlevel.png" alt="" width="18" height="18">GoHighLevel</span><span class="pill tool"><img src="img/tools/recharge.png" alt="" width="18" height="18">Recharge</span></div>
+    </div>
+  </section>
+  <section class="cream" id="work-ecom">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill eyebrow solid">E‑commerce management</span>
+        <h2>Stores that <span class="mark">run smoothly</span></h2>
       </div>
-
-      <div class="panel" role="tabpanel" id="panel-ecom" aria-labelledby="tab-ecom" hidden>
-        <div class="gallery">
+      <div class="gallery">
           <figure class="shot tall"><button><img src="img/shopify-analytics.jpg" alt="Shopify analytics dashboard with sales charts"></button><figcaption>A sales report showing revenue growth from Shopify Analytics.</figcaption></figure>
           <figure class="shot tall"><button><img src="img/product-listing.jpg" alt="Shopify product listing editor"></button><figcaption>A product listing with optimized title, description and images on Shopify.</figcaption></figure>
           <figure class="shot tall"><button><img src="img/supplier-herodesk.jpg" alt="Supplier email thread in Herodesk"></button><figcaption>Supplier coordination on Herodesk.</figcaption></figure>
@@ -337,10 +338,15 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
           <figure class="shot full tall"><button><img src="img/underperformance-report.jpg" alt="Written report summarizing estimate underperformance"></button><figcaption>Sample of reporting the summary for estimate underperformance.</figcaption></figure>
         </div>
         <div class="panel-tools"><span class="hand">tools I use</span><span class="pill tool"><img src="img/tools/shopify.svg" alt="" width="18" height="18">Shopify</span><span class="pill tool"><img src="img/tools/amazon.svg" alt="" width="18" height="18">Amazon Seller Central</span><span class="pill tool"><img src="img/tools/recharge.png" alt="" width="18" height="18">Recharge</span><span class="pill tool"><img src="img/tools/google.svg" alt="" width="18" height="18">Google Workspace</span><span class="pill tool"><img src="img/tools/asana.svg" alt="" width="18" height="18">Asana</span><span class="pill tool"><img src="img/tools/trello.svg" alt="" width="18" height="18">Trello</span><span class="pill tool"><img src="img/tools/notion.svg" alt="" width="18" height="18">Notion</span><span class="pill tool"><img src="img/tools/highlevel.png" alt="" width="18" height="18">HighLevel</span><span class="pill tool"><img src="img/tools/claude.svg" alt="" width="18" height="18">Claude</span><span class="pill tool"><img src="img/tools/openai.svg" alt="" width="18" height="18">ChatGPT</span></div>
+    </div>
+  </section>
+  <section id="work-marketing">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill eyebrow solid">Digital Marketing</span>
+        <h2>Brands that <span class="mark">stay visible</span></h2>
       </div>
-
-      <div class="panel" role="tabpanel" id="panel-marketing" aria-labelledby="tab-marketing" hidden>
-        <div class="gallery">
+      <div class="gallery">
           <figure class="shot wide"><button><img src="img/content-calendar.jpg" alt="Content calendar in Google Sheets"></button><figcaption>Content creation and calendar planning using Google Sheets.</figcaption></figure>
           <figure class="shot wide tall"><button><img src="img/instagram-grid.jpg" alt="Grid of Instagram graphics"></button><figcaption>Grid graphics I created, planned and scheduled for Instagram on Canva.</figcaption></figure>
           <figure class="shot wide"><button><img src="img/email-campaigns.jpg" alt="List of email campaigns in ActiveCampaign"></button><figcaption>Email marketing (broadcasts and newsletters) on ActiveCampaign.</figcaption></figure>
@@ -349,38 +355,18 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
           <figure class="shot wide"><button><img src="img/community.jpg" alt="Social media inbox with comment replies and DMs"></button><figcaption>Community management where replies and DMs show engagement.</figcaption></figure>
         </div>
         <div class="panel-tools"><span class="hand">tools I use</span><span class="pill tool"><img src="img/tools/canva.svg" alt="" width="18" height="18">Canva</span><span class="pill tool"><img src="img/tools/meta.svg" alt="" width="18" height="18">Meta</span><span class="pill tool"><span class="ltr" aria-hidden="true">U</span>Ubersuggest</span><span class="pill tool"><img src="img/tools/googlesearchconsole.svg" alt="" width="18" height="18">Google Search Console</span><span class="pill tool"><img src="img/tools/openai.svg" alt="" width="18" height="18">ChatGPT</span><span class="pill tool"><img src="img/tools/claude.svg" alt="" width="18" height="18">Claude</span><span class="pill tool"><img src="img/tools/instagram.svg" alt="" width="18" height="18">Instagram</span><span class="pill tool"><img src="img/tools/tiktok.svg" alt="" width="18" height="18">TikTok</span><span class="pill tool"><img src="img/tools/facebook.svg" alt="" width="18" height="18">Facebook</span><span class="pill tool"><img src="img/tools/pinterest.svg" alt="" width="18" height="18">Pinterest</span><span class="pill tool"><img src="img/tools/linkedin.svg" alt="" width="18" height="18">LinkedIn</span><span class="pill tool"><img src="img/tools/x.svg" alt="" width="18" height="18">X</span></div>
-      </div>
     </div>
   </section>
 
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48 V24 C 240 0, 480 0, 720 24 S 1200 48, 1440 24 V48 Z" fill="#fdf59a"/></svg>
-  <section class="yellow-band" id="setup">
-    <div class="wrap setup">
-      <div class="polaroids">
-        <div class="polaroid p1"><img src="img/workspace.jpg" alt="Desk with dual monitors and a MacBook Pro"><span class="cap">my daily desk</span></div>
-        <div class="polaroid p2"><img src="img/ups.jpg" alt="UPS battery backup unit"><span class="cap">backup power</span></div>
-      </div>
-      <div class="specs">
-        <div class="sec-head" style="margin-bottom:8px">
-          <span class="pill eyebrow">Home setup proof</span>
-          <h2>Ready to work, <span class="mark" style="background:linear-gradient(transparent 52%, #ffffff 52%, #ffffff 90%, transparent 90%)">rain or shine</span></h2>
-        </div>
-        <dl class="spec"><dt>Work setup</dt><dd>Dual monitor with the MacBook Pro as the main working laptop.</dd></dl>
-        <dl class="spec"><dt>UPS battery backup</dt><span class="speed">10400mAh</span><dd>Input 100 to 240VAC / 12.6 to 14VDC, 12V battery output. Lasts up to 21 hours.</dd></dl>
-        <dl class="spec"><dt>Main internet · PLDT Home Fiber</dt><span class="speed">268 / 153 Mbps</span><dd><button class="btn ghost" style="padding:6px 14px;font-size:13px;margin-top:6px" data-zoom="img/speed-pldt.jpg" data-cap="PLDT Home Fiber speed test">See speed test</button></dd></dl>
-        <dl class="spec"><dt>Backup internet · Smart Data Plan</dt><span class="speed">303 / 154 Mbps</span><dd><button class="btn ghost" style="padding:6px 14px;font-size:13px;margin-top:6px" data-zoom="img/speed-smart.jpg" data-cap="Smart Data Plan speed test">See speed test</button></dd></dl>
-      </div>
-    </div>
-  </section>
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleY(-1);background:var(--white)"><path d="M0 48 V24 C 240 0, 480 0, 720 24 S 1200 48, 1440 24 V48 Z" fill="#fdf59a"/></svg>
 
-  <section id="brands">
+  <section class="cream" id="brands">
     <div class="wrap">
       <div class="sec-head">
         <span class="pill eyebrow">Brands previously handled</span>
-        <h2>Trusted by <span class="mark">9 brands</span> and counting</h2>
+        <h2>Trusted by <span class="mark">10 brands</span> and counting</h2>
       </div>
       <div class="brands">
+        <div class="brand-row"><div class="logo wordmark" aria-label="Haldon Mills"><span>HALDON</span><span>Mills</span></div><div><h3>Haldon Mills</h3><p>An online womenswear store selling elevated everyday and occasion dresses. I handle their customer support in Gorgias, from orders and returns to fulfilment follow ups.</p></div></div>
         <div class="brand-row"><div class="logo"><img src="img/logo-foundr.jpg" alt="Foundr logo"></div><div><h3>Foundr</h3><p>Digital magazines, podcasts and online courses taught by successful business experts.</p></div></div>
         <div class="brand-row"><div class="logo"><img src="img/logo-agile.jpg" alt="Agile logo"></div><div><h3>Agile</h3><p>A Canadian brand that makes modern, high end wooden cat trees and pet furniture.</p></div></div>
         <div class="brand-row"><div class="logo"><img src="img/logo-lief.jpg" alt="Lief Therapeutics logo"></div><div><h3>Lief Therapeutics</h3><p>A medical device and digital health company that makes a wearable ECG smart patch and app program.</p></div></div>
@@ -394,7 +380,7 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
     </div>
   </section>
 
-  <section class="cream" id="teams">
+  <section id="teams">
     <div class="wrap">
       <div class="sec-head">
         <span class="pill eyebrow">Leading remote teams</span>
@@ -419,7 +405,7 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
   </section>
 </main>
 <footer class="foot">
-  <div class="wrap"><span>Mauralyn Malinang · Virtual Assistant · 2026</span><a href="#top">Back to top ↑</a></div>
+  <div class="wrap"><span>Mauralyn Malinang · Virtual Assistant · 2026</span><span>Customer Support · E‑commerce · Digital Marketing</span></div>
 </footer>
 
 <dialog class="lb" id="lb" aria-label="Screenshot preview">
@@ -430,14 +416,6 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
 
 <script>
 (function () {
-  const tabs = document.querySelectorAll('.tab');
-  tabs.forEach(t => t.addEventListener('click', () => {
-    tabs.forEach(o => {
-      const on = o === t;
-      o.setAttribute('aria-selected', on);
-      document.getElementById(o.getAttribute('aria-controls')).hidden = !on;
-    });
-  }));
   const lb = document.getElementById('lb'), li = document.getElementById('lb-img'), lc = document.getElementById('lb-cap');
   function open(src, cap, alt) { li.src = src; li.alt = alt || cap; lc.textContent = cap; if (lb.showModal) lb.showModal(); }
   document.querySelectorAll('.shot button').forEach(b => b.addEventListener('click', () => {
