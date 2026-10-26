@@ -222,13 +222,14 @@ section { padding-block: var(--section); }
   figure, .brand-row, .svc-card, .spec, .sec-head, .panel-tools, .polaroid { break-inside: avoid; }
   .sec-head { break-after: avoid; }
   .print-only { display: grid; }
+  .screen-only { display: none; }
   .speedtests { grid-template-columns: 1fr 1fr; gap: 16px; font-size: 13px; }
   .speedtests img { border: 1px solid var(--line); }
   .spec dd .btn { display: none; }
   .shot button { box-shadow: none; }
   dialog { display: none !important; }
   .about, #teams { break-before: auto; }
-  .about { padding-top: 0; }
+  .about { padding-top: 64px; }
   .gallery { grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .shot, .shot.wide, .shot.full { grid-column: auto; }
   .shot img, .shot.tall img { height: 250px; }
@@ -311,7 +312,7 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
       <div class="specs">
         <div class="sec-head" style="margin-bottom:8px">
           <span class="pill eyebrow">Home setup proof</span>
-          <h2>Ready to work, <span class="mark" style="background:linear-gradient(transparent 52%, #ffffff 52%, #ffffff 90%, transparent 90%)">rain or shine</span></h2>
+          <h2>Ready to work, <span class="mark">rain or shine</span></h2>
         </div>
         <dl class="spec"><dt>Work setup</dt><dd>Dual monitor with the MacBook Pro as the main working laptop.</dd></dl>
         <dl class="spec"><dt>UPS battery backup</dt><span class="speed">10400mAh</span><dd>Input 100 to 240VAC / 12.6 to 14VDC, 12V battery output. Lasts up to 21 hours.</dd></dl>
@@ -371,7 +372,7 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
       <div class="sec-head">
         <span class="pill eyebrow solid">Customer Support</span>
         <h2>Support that keeps <span class="mark">customers happy</span></h2>
-        <p>Tap any screenshot to see it bigger.</p>
+        <p class="screen-only">Tap any screenshot to see it bigger.</p>
       </div>
       <div class="gallery">
           <figure class="shot wide"><button><img src="img/support-analytics.jpg" alt="Email support conversation analytics dashboard"></button><figcaption>Analytics for email support conversations.</figcaption></figure>
