@@ -11,19 +11,21 @@
 <title>Maura Malinang Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&family=Montserrat:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Beth+Ellen&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 <style>
-/* Layout: yellow header, alternating cream and white bands, wave dividers, black closing band. One light look by choice (WTHWTD brand). */
+/* Layout: monochrome editorial like the Canva portfolio. White pages, near black ink, warm gray accents, black label tags, dark closing page. One light look by choice. */
 :root {
-  --red: #e02b20;
-  --yellow: #fdf59a;
-  --cream: #fffdeb;
-  --black: #0b0b0b;
+  --red: #221f20;        /* accent = ink, as in the original */
+  --yellow: #f4f3f1;     /* soft paper gray for bands */
+  --cream: #f4f3f1;
+  --black: #221f20;
   --white: #ffffff;
-  --line: rgba(11, 11, 11, 0.14);
-  --font-head: Poppins, system-ui, sans-serif;
-  --font-body: Montserrat, system-ui, sans-serif;
-  --font-hand: Caveat, "Segoe Print", cursive;
+  --gray: #8b8786;       /* photo backdrop gray */
+  --muted: #706e6f;
+  --line: rgba(34, 31, 32, 0.14);
+  --font-head: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --font-hand: "Beth Ellen", "Segoe Script", cursive;
   --pill: 999px;
   --gutter: 90px;
   --section: 96px;
@@ -43,14 +45,14 @@ a { color: inherit; }
 @media (max-width: 999px) { :root { --gutter: 6vw; --section: 72px; } }
 @media (max-width: 480px) { :root { --gutter: 16px; --section: 56px; } }
 
-h1, h2, h3 { font-family: var(--font-head); font-weight: 600; line-height: 1.12; margin: 0; text-wrap: balance; }
+h1, h2, h3 { font-family: var(--font-head); font-weight: 500; letter-spacing: -.025em; line-height: 1.05; margin: 0; text-wrap: balance; }
 h2 { font-size: clamp(32px, 4vw, 46px); }
 h3 { font-size: clamp(21px, 2vw, 26px); }
 p { margin: 0; text-wrap: pretty; }
-.hand { font-family: var(--font-hand); font-size: 26px; line-height: 1.1; color: var(--red); }
-.mark { background: linear-gradient(transparent 52%, var(--yellow) 52%, var(--yellow) 90%, transparent 90%); padding: 0 4px; margin: 0 -2px; }
+.hand { font-family: var(--font-hand); font-size: 20px; line-height: 1.4; color: var(--black); }
+.mark { color: var(--muted); }
 .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--pill); border: 1.5px solid var(--black); font-size: 13px; font-weight: 600; background: var(--white); white-space: nowrap; }
-.pill.solid { background: var(--black); color: var(--yellow); border-color: var(--black); }
+.pill.solid, .eyebrow.pill { background: var(--black); color: var(--white); border-color: var(--black); border-radius: 0; text-transform: uppercase; letter-spacing: .06em; font-weight: 500; padding: 4px 10px; }
 .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: var(--pill); font-weight: 700; font-size: 15px; text-decoration: none; border: 2px solid var(--red); background: var(--red); color: var(--white); transition: transform .15s, background .15s, border-color .15s; }
 .btn:hover { background: var(--black); border-color: var(--black); transform: translateY(-2px); }
 .btn.ghost { background: transparent; color: var(--black); border-color: var(--black); }
@@ -75,22 +77,32 @@ section { padding-block: var(--section); }
 .eyebrow { display: inline-flex; width: fit-content; }
 .wave { display: block; width: 100%; height: 48px; }
 
+
+/* Cover */
+.cover { position: relative; padding: 0; background: var(--cream); }
+.cover > img { width: 100%; height: clamp(360px, 62vw, 760px); object-fit: cover; }
+.cover-card { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: 10px; }
+.cover-card h1 { background: var(--white); padding: .12em .5em .18em; font-size: clamp(56px, 11vw, 150px); font-weight: 400; letter-spacing: -.03em; box-shadow: 0 10px 30px rgba(34,31,32,.08); }
+.cover-name { margin-top: 18px; font-size: clamp(16px, 2vw, 24px); letter-spacing: .08em; font-weight: 500; }
+.cover-role { font-size: clamp(12px, 1.3vw, 15px); letter-spacing: .14em; }
+
 /* Hero */
-.hero { background: var(--yellow); padding-block: 72px 0; overflow: hidden; }
+.hero { background: var(--white); padding-block: 72px 0; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: end; }
 .hero h1 { font-size: clamp(48px, 7vw, 92px); letter-spacing: -.02em; }
-.hero h1 .r { color: var(--red); }
+.hero h1 .r { color: var(--muted); }
 .hero .lede { font-size: 19px; max-width: 34em; margin-top: 24px; }
 .hero .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; padding-bottom: 72px; }
 @media (max-width: 900px) { .hero .pills { padding-bottom: 8px; } }
 .hero .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; padding-bottom: 72px; }
 .arch-wrap { position: relative; justify-self: center; width: min(400px, 100%); }
-.arch { aspect-ratio: 4 / 5; border-radius: 999px 999px 0 0; overflow: hidden; background: var(--cream); border: 6px solid var(--white); border-bottom: 0; }
+.arch { aspect-ratio: 4 / 5; overflow: hidden; background: var(--gray); }
 .arch img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
 .chip { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); background: var(--white); border-radius: var(--pill); padding: 8px 18px; font-weight: 700; font-size: 14px; box-shadow: 0 6px 18px rgba(11,11,11,.12); white-space: nowrap; }
-.chip b { color: var(--red); }
+.chip b { color: var(--muted); }
 .note-arrow { position: absolute; left: -96px; top: 26%; display: grid; justify-items: end; gap: 2px; transform: rotate(-6deg); }
 .note-arrow svg { width: 70px; height: 40px; }
+.sig-name { text-align: center; margin-top: 14px; font-size: 22px; }
 .sig { font-family: var(--font-hand); font-size: 30px; margin-top: 14px; }
 @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero .ctas { padding-bottom: 8px; } .note-arrow { display: none; } .arch-wrap { width: min(320px, 90%); } }
 
@@ -98,18 +110,16 @@ section { padding-block: var(--section); }
 .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .about-grid article { display: grid; gap: 10px; align-content: start; }
 .about-grid .num { font-family: var(--font-head); font-weight: 700; font-size: 56px; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--black); }
-.about-grid article:last-child .num { color: var(--red); -webkit-text-stroke: 0; }
+.about-grid article:last-child .num { color: var(--black); -webkit-text-stroke: 0; }
 @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
 
 /* Services */
 .svc { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; }
-.svc-card { background: var(--white); border-radius: 22px; padding: 32px 28px; box-shadow: 0 10px 30px rgba(11,11,11,.07); display: grid; gap: 18px; transition: transform .15s; }
-.svc-card:nth-child(1) { transform: rotate(-1.2deg); }
-.svc-card:nth-child(3) { transform: rotate(1.2deg); }
-.svc-card:hover { transform: translateY(-2px) rotate(0); }
+.svc-card { background: var(--white); border-radius: 0; padding: 32px 28px; border: 1px solid var(--line); display: grid; gap: 18px; transition: transform .15s; }
+.svc-card:hover { transform: translateY(-2px); }
 .svc-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: 15.5px; }
 .svc-card li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; }
-.svc-card li::before { content: ""; width: 20px; height: 20px; margin-top: 3px; border-radius: 50%; background: var(--yellow) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5' fill='none' stroke='%23e02b20' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 20px no-repeat; }
+.svc-card li::before { content: ""; width: 20px; height: 20px; margin-top: 3px; border-radius: 50%; background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-6.5' fill='none' stroke='%23221f20' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 20px no-repeat; }
 @media (max-width: 960px) { .svc { grid-template-columns: 1fr; } .svc-card:nth-child(n) { transform: none; } }
 
 /* Work */
@@ -127,7 +137,7 @@ section { padding-block: var(--section); }
 .panel-tools .hand { margin-right: 6px; }
 .pill.tool { padding: 7px 14px 7px 8px; gap: 8px; font-size: 13.5px; }
 .pill.tool img { width: 22px; height: 22px; object-fit: contain; border-radius: 5px; flex: none; }
-.pill.tool .ltr { width: 22px; height: 22px; border-radius: 50%; background: var(--yellow); display: grid; place-items: center; font-family: var(--font-head); font-weight: 700; font-size: 12px; flex: none; }
+.pill.tool .ltr { width: 22px; height: 22px; border-radius: 50%; background: var(--black); color: var(--white); display: grid; place-items: center; font-family: var(--font-head); font-weight: 600; font-size: 12px; flex: none; }
 @media (max-width: 960px) { .shot, .shot.wide, .shot.full { grid-column: span 6; } }
 @media (max-width: 620px) { .gallery { grid-template-columns: 1fr; gap: 24px; } .shot, .shot.wide, .shot.full { grid-column: auto; } .shot img { height: 220px; } .shot.tall img { height: 340px; } }
 
@@ -137,7 +147,7 @@ section { padding-block: var(--section); }
 .polaroid { position: absolute; background: var(--white); padding: 12px 12px 44px; box-shadow: 0 12px 30px rgba(11,11,11,.14); width: 62%; }
 .polaroid img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
 .polaroid .cap { position: absolute; left: 14px; bottom: 8px; font-family: var(--font-hand); font-size: 24px; }
-.polaroid::before { content: ""; position: absolute; top: -12px; left: 50%; width: 90px; height: 26px; transform: translateX(-50%) rotate(-3deg); background: rgba(253, 245, 154, .85); }
+.polaroid::before { content: ""; position: absolute; top: -12px; left: 50%; width: 90px; height: 26px; transform: translateX(-50%) rotate(-3deg); background: rgba(220, 216, 212, .8); }
 .polaroid.p1 { left: 0; top: 0; transform: rotate(-4deg); }
 .polaroid.p2 { right: 0; bottom: 0; transform: rotate(3deg); width: 48%; }
 .polaroid.p2 img { aspect-ratio: 3 / 4; }
@@ -145,7 +155,7 @@ section { padding-block: var(--section); }
 .spec { display: grid; grid-template-columns: 1fr auto; gap: 4px 18px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
 .spec dt { font-weight: 700; }
 .spec dd { margin: 0; grid-column: 1 / -1; font-size: 15.5px; }
-.speed { font-family: var(--font-head); font-weight: 700; font-size: 15px; color: var(--red); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.speed { font-family: var(--font-head); font-weight: 600; font-size: 15px; color: var(--black); white-space: nowrap; font-variant-numeric: tabular-nums; }
 @media (max-width: 900px) { .setup { grid-template-columns: 1fr; } .polaroids { min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; } .polaroid { position: relative; width: auto; } .polaroid.p1, .polaroid.p2 { inset: auto; } .polaroid { padding: 8px 8px 36px; } .polaroid.p2 img { aspect-ratio: 4 / 3; } .polaroid .cap { font-size: 20px; } }
 
 /* Brands */
@@ -153,9 +163,9 @@ section { padding-block: var(--section); }
 .brand-row { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: center; padding: 22px 20px 22px 0; border-bottom: 1px solid var(--line); min-width: 0; }
 .brand-row .logo { width: 96px; height: 64px; background: var(--white); border-radius: 12px; display: grid; place-items: center; padding: 8px; border: 1px solid var(--line); }
 .brand-row .logo img { max-height: 48px; object-fit: contain; }
-.brand-row .logo.wordmark { display: flex; align-items: baseline; justify-content: center; gap: 1px; font-family: var(--font-head); color: var(--black); }
-.brand-row .logo.wordmark span:first-child { font-weight: 700; font-size: 13px; letter-spacing: .08em; }
-.brand-row .logo.wordmark span:last-child { font-weight: 300; font-size: 14px; }
+.brand-row .logo.wordmark { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; font-family: "Cormorant Garamond", "Times New Roman", serif; color: #202223; }
+.brand-row .logo.wordmark span:first-child { font-weight: 600; font-size: 19px; line-height: .95; letter-spacing: .055em; }
+.brand-row .logo.wordmark span:last-child { font-weight: 500; font-size: 8.5px; letter-spacing: .48em; text-transform: uppercase; margin-right: -.48em; }
 .brand-row h3 { font-size: 17px; }
 .brand-row p { font-size: 14.5px; }
 @media (max-width: 640px) { .brands { grid-template-columns: 1fr; } }
@@ -169,12 +179,12 @@ section { padding-block: var(--section); }
 /* Contact */
 .contact { background: var(--black); color: var(--white); }
 .contact-grid { display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: center; }
-.contact .photo { width: 240px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 6px solid var(--yellow); }
+.contact .photo { width: 240px; aspect-ratio: 1; overflow: hidden; background: var(--gray); }
 .contact .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; }
 .contact h2 { font-size: clamp(40px, 6vw, 72px); color: var(--white); }
-.contact h2 span { color: var(--yellow); }
+.contact h2 span { color: var(--white); }
 .contact p { font-size: 19px; max-width: 32em; margin-top: 18px; }
-.contact .hand { color: var(--yellow); margin-top: 14px; font-size: 30px; }
+.contact .hand { color: var(--white); margin-top: 18px; font-size: 22px; }
 .contact .card { margin-top: 28px; display: inline-grid; gap: 6px; border: 2px solid var(--yellow); border-radius: 20px; padding: 18px 24px; }
 .contact .card b { color: var(--yellow); font-family: var(--font-head); }
 @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } .contact .photo { width: 180px; } }
@@ -182,6 +192,36 @@ section { padding-block: var(--section); }
 .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 24px; font-size: 14px; }
 .foot a { text-decoration: none; }
 .foot a:hover { color: var(--yellow); }
+
+/* Print and PDF */
+.print-only { display: none; }
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body::before { display: none; }
+  section { break-before: page; }
+  .cover { break-before: auto; }
+  .cover > img { height: 1555px; }
+  .cover + .hero { break-before: page; }
+  .about-grid { margin-top: 0; }
+  figure, .brand-row, .svc-card, .spec, .sec-head, .panel-tools, .polaroid { break-inside: avoid; }
+  .sec-head { break-after: avoid; }
+  .print-only { display: grid; }
+  .speedtests { grid-template-columns: 1fr 1fr; gap: 16px; font-size: 13px; }
+  .speedtests img { border: 1px solid var(--line); }
+  .spec dd .btn { display: none; }
+  .shot button { box-shadow: none; }
+  dialog { display: none !important; }
+  .about, #teams { break-before: auto; }
+  .about { padding-top: 0; }
+  .gallery { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .shot, .shot.wide, .shot.full { grid-column: auto; }
+  .shot img, .shot.tall img { height: 250px; }
+  .teams .shot img { height: 300px; object-fit: cover; }
+  .panel-tools { margin-top: 28px; }
+  .contact { min-height: 1484px; display: grid; align-content: center; }
+  .hero { padding-top: 120px; }
+}
 
 /* Lightbox */
 dialog.lb { border: 0; padding: 0; background: transparent; max-width: min(1200px, 94vw); max-height: 92vh; }
@@ -195,11 +235,18 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
 
 
 <main id="top">
+  <section class="cover">
+    <img src="img/cover.jpg" alt="Clean white desk with a computer">
+    <div class="cover-card">
+      <h1>Portfolio</h1>
+      <p class="cover-name">MAURALYN MALINANG</p>
+      <p class="cover-role">VIRTUAL ASSISTANT · 2026</p>
+    </div>
+  </section>
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="pill solid">Virtual Assistant · Portfolio 2026</span>
-        <h1 style="margin-top:22px">Hi! I'm <span class="mark">Maura</span><span class="r">.</span></h1>
+        <h1>Hi! I'm <span class="mark">Maura</span><span class="r">.</span></h1>
         <p class="lede">I'm an experienced Virtual Assistant with over 5 years of experience across e‑commerce operations, customer support and digital marketing. My goal is to help businesses run better and grow faster without overwhelm.</p>
         <div class="pills">
           <span class="pill">Shopify</span><span class="pill">WooCommerce</span><span class="pill">Amazon and eBay</span><span class="pill">Helpdesk platforms</span><span class="pill">Social media</span>
@@ -208,15 +255,16 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
       <div class="arch-wrap">
         <div class="note-arrow" aria-hidden="true">
           <span class="hand">that's me!</span>
-          <svg viewBox="0 0 70 40"><path d="M4 8 C 24 4, 44 14, 60 30" fill="none" stroke="#e02b20" stroke-width="2.5" stroke-linecap="round"/><path d="M50 30 L 61 31 L 59 20" fill="none" stroke="#e02b20" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 70 40"><path d="M4 8 C 24 4, 44 14, 60 30" fill="none" stroke="#221f20" stroke-width="2.5" stroke-linecap="round"/><path d="M50 30 L 61 31 L 59 20" fill="none" stroke="#221f20" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div class="arch"><img src="img/maura.jpg" alt="Portrait of Mauralyn Malinang smiling"></div>
         <div class="chip">Mauralyn Malinang · <b>5+ years</b></div>
+        <p class="hand sig-name">Mauralyn Malinang</p>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="about">
     <div class="wrap">
       <div class="about-grid">
         <article>
@@ -237,8 +285,6 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
       </div>
     </div>
   </section>
-
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48 V24 C 240 0, 480 0, 720 24 S 1200 48, 1440 24 V48 Z" fill="#fdf59a"/></svg>
   <section class="yellow-band" id="setup">
     <div class="wrap setup">
       <div class="polaroids">
@@ -254,10 +300,10 @@ dialog.lb .x { position: absolute; top: 8px; right: 8px; width: 40px; height: 40
         <dl class="spec"><dt>UPS battery backup</dt><span class="speed">10400mAh</span><dd>Input 100 to 240VAC / 12.6 to 14VDC, 12V battery output. Lasts up to 21 hours.</dd></dl>
         <dl class="spec"><dt>Main internet · PLDT Home Fiber</dt><span class="speed">268 / 153 Mbps</span><dd><button class="btn ghost" style="padding:6px 14px;font-size:13px;margin-top:6px" data-zoom="img/speed-pldt.jpg" data-cap="PLDT Home Fiber speed test">See speed test</button></dd></dl>
         <dl class="spec"><dt>Backup internet · Smart Data Plan</dt><span class="speed">303 / 154 Mbps</span><dd><button class="btn ghost" style="padding:6px 14px;font-size:13px;margin-top:6px" data-zoom="img/speed-smart.jpg" data-cap="Smart Data Plan speed test">See speed test</button></dd></dl>
+        <div class="print-only speedtests"><figure><img src="img/speed-pldt.jpg" alt="PLDT speed test"><figcaption>PLDT Home Fiber</figcaption></figure><figure><img src="img/speed-smart.jpg" alt="Smart speed test"><figcaption>Smart Data Plan</figcaption></figure></div>
       </div>
     </div>
   </section>
-  <svg class="wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleY(-1);background:var(--cream)"><path d="M0 48 V24 C 240 0, 480 0, 720 24 S 1200 48, 1440 24 V48 Z" fill="#fdf59a"/></svg>
   <section class="cream" id="services">
     <div class="wrap">
       <div class="sec-head">
